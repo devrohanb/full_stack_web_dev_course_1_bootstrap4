@@ -306,6 +306,7 @@
       </div>
     </div>
 
+    <!-- TODO: Carousel -->
     <div class="container">
       <div class="row row-content">
         <div class="col">
@@ -376,6 +377,7 @@
               <li data-target="#mycarousel" data-slide-to="1"></li>
               <li data-target="#mycarousel" data-slide-to="2"></li>
             </ol>
+            <!-- Carousel left and right buttons (arrows) -->
             <a
               class="carousel-control-prev"
               href="#mycarousel"
@@ -392,6 +394,14 @@
             >
               <span class="carousel-control-next-icon"></span>
             </a>
+            <div class="btn-group" id="carouselButton">
+              <button class="btn btn-danger btn-sm" id="carousel-pause">
+                <span class="fa fa-pause"></span>
+              </button>
+              <button class="btn btn-danger btn-sm" id="carousel-play">
+                <span class="fa fa-play"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -652,5 +662,22 @@
         $('[data-toggle="tooltip"]').tooltip();
       });
     </script> -->
+
+    <!-- TODO: Jquery Code for Carousel control buttons -->
+    <script>
+      $(document).ready(() => {
+        // Time interval between sliding action of carousel
+        $("#mycarousel").carousel({ interval: 2000 });
+
+        // Carousel pause button action
+        $("#carousel-pause").click(() => {
+          $("#mycarousel").carousel("pause");
+        });
+        // Carousel Play button action
+        $("#carousel-play").click(() => {
+          $("#mycarousel").carousel("cycle");
+        });
+      });
+    </script>
   </body>
 </html>
