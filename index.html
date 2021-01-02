@@ -394,14 +394,21 @@
             >
               <span class="carousel-control-next-icon"></span>
             </a>
-            <div class="btn-group" id="carouselButton">
+
+            <!-- TODO: Carousel Control With only 1 button wich act as both Play and Pause -->
+            <button class="btn btn-danger btn-sm" id="carouselButton">
+              <span class="fa fa-pause"></span>
+            </button>
+
+            <!-- TODO: Carousel Control with 2 buttons Play and Pause -->
+            <!-- <div class="btn-group" id="carouselButton">
               <button class="btn btn-danger btn-sm" id="carousel-pause">
                 <span class="fa fa-pause"></span>
               </button>
               <button class="btn btn-danger btn-sm" id="carousel-play">
                 <span class="fa fa-play"></span>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -665,19 +672,47 @@
 
     <!-- TODO: Jquery Code for Carousel control buttons -->
     <script>
+      // TODO: Carousel with One Control button act as both Play and Pause JQuery code :
       $(document).ready(() => {
         // Time interval between sliding action of carousel
         $("#mycarousel").carousel({ interval: 2000 });
 
-        // Carousel pause button action
-        $("#carousel-pause").click(() => {
-          $("#mycarousel").carousel("pause");
-        });
-        // Carousel Play button action
-        $("#carousel-play").click(() => {
-          $("#mycarousel").carousel("cycle");
+        // Carousel button action
+        $("#carouselButton").click(() => {
+          if ($("#carouselButton").children("span").hasClass("fa-pause")) {
+            // Performing pause action
+            $("#mycarousel").carousel("pause");
+
+            // Switching the pause button to play button
+            $("#carouselButton").children("span").removeClass("fa-pause");
+            $("#carouselButton").children("span").addClass("fa-play");
+          } else if (
+            $("#carouselButton").children("span").hasClass("fa-play")
+          ) {
+            //Performing Play action
+            $("#mycarousel").carousel("cycle");
+
+            // Switching the play button to pause button
+            $("#carouselButton").children("span").removeClass("fa-play");
+            $("#carouselButton").children("span").addClass("fa-pause");
+          }
         });
       });
+
+      // TODO: Carousel with 2 control buttons JQuery code :
+      // $(document).ready(() => {
+      //   // Time interval between sliding action of carousel
+      //   $("#mycarousel").carousel({ interval: 2000 });
+
+      //   // Carousel pause button action
+      //   $("#carousel-pause").click(() => {
+      //     $("#mycarousel").carousel("pause");
+      //   });
+      //   // Carousel Play button action
+      //   $("#carousel-play").click(() => {
+      //     $("#mycarousel").carousel("cycle");
+      //   });
+      // });
     </script>
   </body>
 </html>
