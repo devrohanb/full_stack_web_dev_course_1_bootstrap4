@@ -70,10 +70,15 @@
             </li>
           </ul>
           <!-- TODO: Login Button -->
-          <span class="navbar-text">
+          <!-- <span class="navbar-text">
             <a data-toggle="modal" data-target="#loginModal">
               <span class="fa fa-sign-in"></span> Login
             </a>
+          </span> -->
+
+          <!-- TODO: Login Button without using "data-attributes" -->
+          <span class="navbar-text">
+            <a id="login-btn"> <span class="fa fa-sign-in"></span> Login </a>
           </span>
         </div>
       </div>
@@ -164,11 +169,17 @@
               title="Or call Us at <br> <strong>+852 1234656573 </strong>"
               data-placement="bottom"
             > -->
-            <a
+            <!-- TODO: Reserve table button with data-attributes  -->
+            <!-- <a
               class="btn btn-warning btn-block"
               data-toggle="modal"
               data-target="#reserveTableModal"
             >
+              Reserve Table
+            </a> -->
+
+            <!-- TODO: Resereve table button without data attributes -->
+            <a id="reserveTableBtn" class="btn btn-warning btn-block">
               Reserve Table
             </a>
           </div>
@@ -713,6 +724,20 @@
       //     $("#mycarousel").carousel("cycle");
       //   });
       // });
+    </script>
+
+    <script>
+      $(document).ready(() => {
+        // TODO: Login modal action
+        $("#login-btn").click(() => {
+          $("#loginModal").modal("show");
+        });
+
+        // TODO: reserve Table modal action
+        $("#reserveTableBtn").click(() => {
+          $("#reserveTableModal").modal("show");
+        });
+      });
     </script>
   </body>
 </html>

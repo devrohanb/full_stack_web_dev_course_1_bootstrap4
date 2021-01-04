@@ -76,3 +76,17 @@ body {
   position: absolute;
   bottom: 0px;
 }
+
+.modal-dialog {
+  .modal-header {
+    background: $background-dark;
+    color: $lt-gray;
+  }
+
+  .modal-body {
+    background: $background-pale;
+  }
+  .close {
+    color: floralwhite;
+  }
+}
